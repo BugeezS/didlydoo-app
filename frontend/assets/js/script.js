@@ -1,3 +1,3 @@
-import { testFetch } from "./testfetch.js";
+import { callAPI } from "./testfetch.js";
 
-testFetch();
+callAPI();
