@@ -8,48 +8,32 @@ export async function testFetch() {
     console.log(data);
 
     data.forEach((element) => {
+      let i = 0;
       article.innerHTML += `
         <h2>${element.author} ${element.name}</h2>
         <p>${element.description}</p>`;
 
       const table = document.createElement("table");
-      const headerRow = document.createElement("tr");
-      headerRow.innerHTML = "<th>Name</th>";
-
-      element.dates.forEach((date) => {
-        const th = document.createElement("th");
-        th.textContent = date;
-        headerRow.appendChild(th);
-      });
-
-      table.appendChild(headerRow);
-
-      // Create table body rows with attendee availability
-      element.attendees.forEach((attendee) => {
-        const bodyRow = document.createElement("tr");
-        const nameCell = document.createElement("td");
-        nameCell.textContent = attendee.name;
-        bodyRow.appendChild(nameCell);
-
-        element.dates.forEach((date) => {
-          const availabilityCell = document.createElement("td");
-          const dateAvailability = attendee.dates.find((d) => d.date === date);
-
-          if (dateAvailability) {
-            availabilityCell.textContent = dateAvailability.available
-              ? "Yes"
-              : "No";
-          } else {
-            availabilityCell.textContent = "N/A";
-          }
-
-          bodyRow.appendChild(availabilityCell);
-        });
-
-        table.appendChild(bodyRow);
-      });
-
+      table.classList.add(".events_table");
       article.appendChild(table);
+
+      const tr = document.createElement("tr");
+      table.appendChild(tr);
+
+      for (let i = 0; i < element.dates.length; i++) {
+        const tdDate = document.createElement("td");
+        tdDate.textContent = element.dates[i].date;
+        tr.appendChild(tdDate);
+      }
+      let a = 0;
+
+      for (let date of element.dates) {
+        const trName = document.createElement("tr");
+        trName.textContent = date.attendees[a].name;
+        table.appendChild(trName);
+        console.log(date.attendees[a]);
+        a++;
+      }
     });
   } catch (error) {
     console.error(error);
