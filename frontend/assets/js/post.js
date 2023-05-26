@@ -5,15 +5,18 @@ export function postEvent(){
     const name = nameTag.value
     const descriptionTag = document.getElementById("add-events__description")
     const description = descriptionTag.value
-    const dateTag = document.getElementById("add-events__date")
-    const date =  dateTag.value
+    const dateTag = document.getElementsByClassName("add-events__date")
 
-    formatEventObject(author, name, description, date)
+    let dates = []
+    for ( let i = 0 ; i < dateTag.length ; i++){
+        dates.push(dateTag[i].value)
+    }
+
+    formatEventObject(author, name, description, dates)
 }
 
-function formatEventObject(author, name, description, date){
-    const dates = []
-    dates.push(date)
+function formatEventObject(author, name, description, dates){
+
 
     const data = {
         "name" : name,
