@@ -16,7 +16,7 @@
     </header>
     <main>
         <button value="add_event_button">Add an event</button>
-        <form action="" method="POST" class="add-events">
+        <form id="add-events" action="" method="POST" class="add-events">
             <label for="add-events__author">Author : </label>
             <input type="text" id="add-events__author" maxlength="256" name="author" required>
 
@@ -29,7 +29,7 @@
             <label for="add-events__date">Date : </label>
             <input type="date" id="add-events__date" name="date" required>
 
-            <input type="submit" value="Submit">
+            <input id="add-events__submit" type="submit" value="Submit">
         </form>
         <article class="events">
             <!--Injection JS-->
