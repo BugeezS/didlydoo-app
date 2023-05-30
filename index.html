@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon"  href="./frontend/assets/img/favicon-16x16.png">
     <script type="module" src="./frontend/assets/js/toggleButton.js"></script>
+    <script type="module" src="./frontend/assets/js/testfetch.js"></script>
     <script type="module" src="./frontend/assets/js/script.js"></script>
 
     <link rel="stylesheet" href="./frontend/assets/css/style.min.css">
@@ -16,8 +17,8 @@
         <h1>Didlydoo</h1>
     </header>
     <main>
-        <button class="toggle" value="add_event_button">Add an event</button>
-        <form action="" method="POST" class="add-events">
+        <button id="toggle" value="add_event_button">Create an event</button>
+        <form action="" method="POST" id="add-events">
             <label for="add-events__author">Author : </label>
             <input type="text" id="add-events__author" maxlength="256" name="author" required>
 
