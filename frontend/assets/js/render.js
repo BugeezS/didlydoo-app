@@ -7,12 +7,16 @@ export async function renderEvents() {
     const response = await fetch("http://localhost:3000/api/events");
     const data = await response.json();
 
-    // Create a Set to store unique names
-    const uniqueNames = new Set();
-
     data.forEach((element) => {
-      // Add the author's name to the Set
+      const uniqueNames = new Set();
       uniqueNames.add(element.author);
+      element.dates.forEach((date) => {
+        if (date.attendees && Array.isArray(date.attendees)) {
+          date.attendees.forEach((attendee) => {
+            uniqueNames.add(attendee.name);
+          });
+        }
+      });
 
       ul.innerHTML += `
         <li class="event">
@@ -24,42 +28,24 @@ export async function renderEvents() {
           <table id="table-${element.id}" class="events_table">
           </table>
         </li>
-        `;
+      `;
 
       const table = document.getElementById(`table-${element.id}`);
 
-      // Create the header row for dates
       const trHeader = document.createElement("tr");
       table.appendChild(trHeader);
 
-      // Create the first empty cell in the header
-      const thEmpty = document.createElement("th");
-      trHeader.appendChild(thEmpty);
+      const thAuthor = document.createElement("th");
+      thAuthor.textContent = "Author";
+      trHeader.appendChild(thAuthor);
 
-      // Create the remaining header cells for dates
       element.dates.forEach((date) => {
         const thDate = document.createElement("th");
         thDate.textContent = date.date;
         trHeader.appendChild(thDate);
       });
 
-      // Create a Set to store unique attendee names
-      const uniqueAttendeeNames = new Set();
-
-      // Iterate over the dates array
-      element.dates.forEach((date) => {
-        // Check if attendees array exists for the date
-        if (date.attendees && Array.isArray(date.attendees)) {
-          // Iterate over the attendees array
-          date.attendees.forEach((attendee) => {
-            // Add the attendee's name to the Set
-            uniqueAttendeeNames.add(attendee.name);
-          });
-        }
-      });
-
-      // Create the first column for attendee names
-      uniqueAttendeeNames.forEach((name) => {
+      uniqueNames.forEach((name) => {
         const trName = document.createElement("tr");
         table.appendChild(trName);
 
@@ -67,32 +53,31 @@ export async function renderEvents() {
         tdName.textContent = name;
         trName.appendChild(tdName);
 
-        // Create the attendance cells for each date
         element.dates.forEach((date) => {
           const tdAttendance = document.createElement("td");
           const attendanceStatus = getAttendanceStatus(date.attendees, name);
-          tdAttendance.textContent = attendanceStatus ? "V" : "X";
+          tdAttendance.textContent =
+            name === element.author ? "V" : attendanceStatus ? "V" : "X";
           trName.appendChild(tdAttendance);
         });
       });
     });
+
     renderTrashes();
   } catch (error) {
     console.error(error);
   }
 }
 
-function renderTrashes(){
-  const remove = document.getElementsByClassName("event-trash")
-  for(let trash of remove){
-   trash.addEventListener("click", event => {
-       removeEvents(event, trash)
-   })
- }
+function renderTrashes() {
+  const remove = document.getElementsByClassName("event-trash");
+  for (let trash of remove) {
+    trash.addEventListener("click", (event) => {
+      removeEvents(event, trash);
+    });
+  }
 }
 
-
-// Get the attendance status for a specific attendee on a given date
 function getAttendanceStatus(attendees, attendeeName) {
   if (attendees && Array.isArray(attendees)) {
     for (let i = 0; i < attendees.length; i++) {
