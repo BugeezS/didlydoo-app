@@ -82,15 +82,14 @@ export async function renderEvents() {
   }
 }
 
-function renderTrashes(){
-  const remove = document.getElementsByClassName("event-trash")
-  for(let trash of remove){
-   trash.addEventListener("click", event => {
-       removeEvents(event, trash)
-   })
- }
+function renderTrashes() {
+  const remove = document.getElementsByClassName("event-trash");
+  for (let trash of remove) {
+    trash.addEventListener("click", (event) => {
+      removeEvents(event, trash);
+    });
+  }
 }
-
 
 // Get the attendance status for a specific attendee on a given date
 function getAttendanceStatus(attendees, attendeeName) {
