@@ -1,10 +1,11 @@
-import { testFetch } from "./testfetch.js";
-import { postEvent } from "./post.js"
+import { renderEvents } from "./render.js";
+import { postEvents } from "./post.js"
 
-testFetch();
+renderEvents();
 
-const submit =  document.getElementById("add-events__submit")
+const submit = document.getElementById("add-events__submit")
 submit.addEventListener("click", event => {
     event.preventDefault()
-    postEvent()
+    postEvents()
 })
+

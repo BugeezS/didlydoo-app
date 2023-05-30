@@ -1,4 +1,4 @@
-export function postEvent(){
+export function postEvents(){
     const authorTag = document.getElementById("add-events__author")
     const author = authorTag.value
     const nameTag = document.getElementById("add-events__name")
