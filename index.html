@@ -7,6 +7,7 @@
     <link rel="shortcut icon"  href="./frontend/assets/img/favicon-16x16.png">
     <script type="module" src="./frontend/assets/js/toggleButton.js"></script>
     <script type="module" src="./frontend/assets/js/testfetch.js"></script>
+    <script type="module" src="./frontend/assets/js/closeButton.js"></script>
     <script type="module" src="./frontend/assets/js/script.js"></script>
 
     <link rel="stylesheet" href="./frontend/assets/css/style.min.css">
@@ -17,23 +18,34 @@
         <h1>Didlydoo</h1>
     </header>
     <main>
-        <button id="toggle" value="add_event_button">Create an event</button>
+        <button id="toggle" value="add_event_button" onclick="toggleFormLayout()">Create an event</button>
         <form action="" method="POST" id="add-events">
+            <div class="author">
             <label for="add-events__author">Author : </label>
             <input type="text" id="add-events__author" maxlength="256" name="author" required>
-
+            </div>
+            
+            <div class="name-event">            
             <label for="add-events__name">Name : </label>
             <input type="text" id="add-events__name" maxlength="256" name="name" required>
+            </div>
 
+            <div class="description-event">
             <label for="add-events__description">Description : </label>
             <textarea name="description" id="add-events__description" cols="30" rows="10" required></textarea>
-
+            </div>
+            
+            <div class="dates">
             <label for="add-events__date">Date : </label>
             <input type="date" id="add-events__date" class="add-events__date" name="date" required>
-
-            <input type="button" value="Add Date" id="add-events__date_button">
-
+            </div>
+            
+            <div class="submit-btn">
             <input id="add-events__submit" type="submit" value="Submit">
+            </div>
+
+            <span class="close-button">X</span>
+
         </form>
         <ul id="events-list" class="events-list">
             <!--Injection JS-->

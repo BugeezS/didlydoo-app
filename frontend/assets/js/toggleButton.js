@@ -8,4 +8,6 @@ export function hiddenFormDisplayForm() {
   } else {
     console.log("if css flex");
   }
+    form.classList.toggle("vertical-form");
+  
 }
