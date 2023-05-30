@@ -15,12 +15,11 @@
 </head>
 <body>
     <header>
-        <h1>Didlydoo</h1>
+        <h1><img src="./frontend/assets/img/logo.png" alt="Didlydoo logo"></h1>
     </header>
     <main>
-        <button id="toggle" value="add_event_button" onclick="toggleFormLayout()">Create an event</button>
-        <form action="" method="POST" id="add-events">
-            <div class="author">
+        <button  id="open-form" value="add_event_button">Create an event</button>
+        <form id="add-events" action="" method="POST" class="add-events">
             <label for="add-events__author">Author : </label>
             <input type="text" id="add-events__author" maxlength="256" name="author" required>
             </div>

@@ -1,3 +1,46 @@
+html,body{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #2180d1;
+}
+h1{
+    text-align: center;
+    img{
+        margin: 30px 0;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #open-form{
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: white;
+        background-color: #fd9644; 
+        border: 1px solid #fa8231;
+        margin: 15px 0;
+        border-radius: 25px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        &:hover{
+            background-color: white;
+            color: #2180d1;
+            border: 1px solid #2180d1;
+            box-shadow: none;
+            transform: translate(1px, 1px);
+        }
+    }
+
+}
+
+
 .event-trash{
     width: 25px;
     height: 25px;
@@ -12,20 +55,55 @@
     padding: 0;
     width: 100%;
     .event{
-        background-color: lightgray;
+        background-color: whitesmoke;
         padding: 10px 15px;
-        width: 90%;
+        width: auto;
         margin: 15px auto;
+        position: relative;
         overflow: hidden;
         h2{
             margin: 0 0 10px 0;
+            width: 90%;
+        }
+        p{
+            width: 100%;
+        }
+        .event-trash{
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 10%;
+        }
+        table,th,td{
+            
         }
         table{
-            border: 1px solid black;
+            display: block;
             margin: 0 auto;
-            th{
-                font-size: 12px;
+            width: auto;
+            overflow-x: auto !important;
+            text-align: center;
+            border-collapse: collapse;
+            tr{
+                th{
+                    font-size: 14px;;
+                }
+                th,td{
+                    padding: 10px;
+                    border: 1px solid rgba(0,0,0,0.5);
+                }
+                td:first-child{
+                    width: 150px;
+                    position: sticky;
+                    left: 0;
+                    background-color: #2180d1;
+                    color: whitesmoke;
+                    font-weight: 900;
+                    font-size: 18px;
+                    z-index: 10;
+                }
             }
+
         }
     }
 }
