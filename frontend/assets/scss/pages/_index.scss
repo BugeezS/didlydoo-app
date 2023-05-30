@@ -6,3 +6,26 @@
      color: red;
     }
 }
+
+#events-list{
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    .event{
+        background-color: lightgray;
+        padding: 10px 15px;
+        width: 90%;
+        margin: 15px auto;
+        overflow: hidden;
+        h2{
+            margin: 0 0 10px 0;
+        }
+        table{
+            border: 1px solid black;
+            margin: 0 auto;
+            th{
+                font-size: 12px;
+            }
+        }
+    }
+}
