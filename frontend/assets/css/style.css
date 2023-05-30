@@ -1,3 +1,35 @@
 #add-events {
   display: none;
+}
+
+.event-trash {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.event-trash:hover {
+  color: red;
+}
+
+#events-list {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+#events-list .event {
+  background-color: lightgray;
+  padding: 10px 15px;
+  width: 90%;
+  margin: 15px auto;
+  overflow: hidden;
+}
+#events-list .event h2 {
+  margin: 0 0 10px 0;
+}
+#events-list .event table {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+#events-list .event table th {
+  font-size: 12px;
 }/*# sourceMappingURL=style.css.map */
