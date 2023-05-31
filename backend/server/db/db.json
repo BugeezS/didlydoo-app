@@ -58,6 +58,33 @@
             "available": false
           }
         ]
+      },
+      {
+        "name": "Jeanmi",
+        "dates": [
+          {
+            "date": "2022-03-17",
+            "available": true
+          }
+        ]
+      },
+      {
+        "name": "Alain",
+        "dates": [
+          {
+            "date": "2022-03-22",
+            "available": false
+          }
+        ]
+      },
+      {
+        "name": "Tim",
+        "dates": [
+          {
+            "date": "2022-03-22",
+            "available": true
+          }
+        ]
       }
     ],
     "created_at": "2021-11-15T00:00",
