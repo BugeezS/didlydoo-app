@@ -46,8 +46,8 @@ export async function renderEvents() {
       const trHeader = document.createElement('tr');
       table.appendChild(trHeader);
 
-      const thAuthor = document.createElement('th');
-      thAuthor.textContent = 'Author';
+      const thAuthor = document.createElement("th");
+      thAuthor.textContent = "Participants";
       trHeader.appendChild(thAuthor);
 
       element.dates.forEach((date) => {
@@ -94,6 +94,8 @@ export async function renderEvents() {
       ul.appendChild(liEvent);
     });
 
+    renderTrashes();
+
     const eventTrashContainer = document.querySelector('.events-list');
     eventTrashContainer.addEventListener('click', (event) => {
       if (event.target.classList.contains('event-trash')) {
@@ -104,6 +106,15 @@ export async function renderEvents() {
     });
   } catch (error) {
     console.error(error);
+  }
+}
+
+function renderTrashes() {
+  const remove = document.getElementsByClassName("event-trash");
+  for (let trash of remove) {
+    trash.addEventListener("click", (event) => {
+      removeEvents(event, trash);
+    });
   }
 }
 
