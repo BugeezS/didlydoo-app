@@ -37,8 +37,63 @@ main{
             transform: translate(1px, 1px);
         }
     }
+    #add-events{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.97);
+        height: 100%;
+        width: 100%;
+        // padding: 50px;
+        transition : all 1s;
+        #close-form{
+            color: whitesmoke;
+            height: 35px;
+            width: 35px;
+            align-self: flex-end;
+            cursor: pointer;
+            margin: 25px 25px 0 0;
+        }
+        label{
+            color: whitesmoke;
+        }
+        label, input, textarea{
+            margin: 5px auto;
+        }
+        label, input, textarea{
+            width: 300px;
+        }
+        #add-events__date_button{
+            width: 150px;
+            height: 25px;
+            cursor: pointer;
+        }
+        input[type="submit"]{
+            height: 35px;
+            width: 150px;
+            cursor: pointer;
+            background-color: rgb(83, 233, 121);
+            border: 1px solid rgb(83, 233, 121);
+            font-weight: 700;
+            margin-top: 25px;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.97);
+                border: 1px solid rgb(83, 233, 121);
+                color: rgb(83, 233, 121);
+            }
+        }
+    }
 
 }
+
+.translate-form{
+    // left: -50px !important;
+    transform: translate(100%);
+}
+
 
 
 .event-trash{
