@@ -13,25 +13,31 @@ export function postEvents(){
     }
 
     if(!author){
+        const authorAlert = `<p>The author name must be filled !</p>`
         authorTag.classList.add("alert-field")
-        console.error('The author name must be filled');
+        authorTag.previousElementSibling.innerHTML != `The author name must be filled !` ? authorTag.insertAdjacentHTML("beforebegin", authorAlert) : "";
         return;
     }
     authorTag.classList.remove("alert-field")
+    authorTag.previousElementSibling.innerHTML == `The author name must be filled !` ? authorTag.previousElementSibling.remove() : ""
 
     if(!name){
+        const nameAlert = `<p>The event name must be filled !</p>`
         nameTag.classList.add("alert-field")
-        console.error('The event name must be filled');
+        nameTag.previousElementSibling.innerHTML != `The event name must be filled !` ? nameTag.insertAdjacentHTML("beforebegin", nameAlert) : "";
         return;
     }
     nameTag.classList.remove("alert-field")
+    nameTag.previousElementSibling.innerHTML == `The event name must be filled !` ? nameTag.previousElementSibling.remove() : ""
     
     if(!description){
+        const descriptionAlert = `<p>The event description must be filled !</p>`
         descriptionTag.classList.add("alert-field")
-        console.error('The event description must be filled');
+        descriptionTag.previousElementSibling.innerHTML != `The event description must be filled !` ? descriptionTag.insertAdjacentHTML("beforebegin", descriptionAlert) : "";
         return;
     }
     descriptionTag.classList.remove("alert-field")
+    descriptionTag.previousElementSibling.innerHTML == `The event description must be filled !` ? descriptionTag.previousElementSibling.remove() : ""
 
     let dateNumber = 1;
     for(let date of dates){
