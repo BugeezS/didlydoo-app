@@ -1,5 +1,37 @@
 [
   {
+    "id": "0cfe26cccec4",
+    "name": "dfsdsf",
+    "author": "dfssfd",
+    "description": "fsdsdf",
+    "dates": [
+      "2023-05-11"
+    ],
+    "created_at": "2023-05-31T13:09:54.918Z",
+    "num_modification": 0,
+    "last_modification": "2023-05-31T13:09:54.918Z",
+    "attendees": [
+      {
+        "name": "dsqqddqs",
+        "dates": [
+          {
+            "date": "2023-05-11",
+            "available": true
+          }
+        ]
+      },
+      {
+        "name": "dsqdssdq",
+        "dates": [
+          {
+            "date": "2023-05-11",
+            "available": true
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "f5b6564b5dc4",
     "name": "My sweet 16",
     "description": "I am going to be 16, let us all party together! Help me pick a date so we can go together",
@@ -38,6 +70,27 @@
           {
             "date": "2022-03-21",
             "available": true
+          }
+        ]
+      },
+      {
+        "name": "dqsqsd",
+        "dates": [
+          {
+            "date": "2022-03-17",
+            "available": false
+          },
+          {
+            "date": "2022-03-18",
+            "available": true
+          },
+          {
+            "date": "2022-03-21",
+            "available": true
+          },
+          {
+            "date": "2022-03-22",
+            "available": false
           }
         ]
       }
@@ -86,6 +139,81 @@
           {
             "date": "2022-03-11",
             "available": true
+          },
+          {
+            "date": "2022-03-12",
+            "available": false
+          }
+        ]
+      },
+      {
+        "name": "dqssdqqsd",
+        "dates": [
+          {
+            "date": "2022-01-10",
+            "available": false
+          },
+          {
+            "date": "2022-02-10",
+            "available": false
+          },
+          {
+            "date": "2022-03-10",
+            "available": true
+          },
+          {
+            "date": "2022-03-11",
+            "available": true
+          },
+          {
+            "date": "2022-03-12",
+            "available": false
+          }
+        ]
+      },
+      {
+        "name": "dnsqkjdsqjksnqdj",
+        "dates": [
+          {
+            "date": "2022-01-10",
+            "available": false
+          },
+          {
+            "date": "2022-02-10",
+            "available": true
+          },
+          {
+            "date": "2022-03-10",
+            "available": false
+          },
+          {
+            "date": "2022-03-11",
+            "available": true
+          },
+          {
+            "date": "2022-03-12",
+            "available": false
+          }
+        ]
+      },
+      {
+        "name": "Bruno",
+        "dates": [
+          {
+            "date": "2022-01-10",
+            "available": false
+          },
+          {
+            "date": "2022-02-10",
+            "available": true
+          },
+          {
+            "date": "2022-03-10",
+            "available": true
+          },
+          {
+            "date": "2022-03-11",
+            "available": false
           },
           {
             "date": "2022-03-12",

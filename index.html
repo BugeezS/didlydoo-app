@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="./frontend/assets/js/script.js"></script>
+
+    <link rel="stylesheet" href="./frontend/assets/css/style.min.css">
+    <title>Didlydoo</title>
+</head>
+<body>
+    <header>
+        <h1><img src="./frontend/assets/img/logo.png" alt="Didlydoo logo"></h1>
+    </header>
+    <main>
+        <button id="open-form" value="add_event_button">Add an event</button>
+        <form id="add-events" action="" method="POST" class="add-events">
+            <svg id="close-form" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <label for="add-events__author">Author : </label>
+            <input type="text" id="add-events__author" maxlength="256" name="author" required>
+
+            <label for="add-events__name">Name : </label>
+            <input type="text" id="add-events__name" maxlength="256" name="name" required>
+
+            <label for="add-events__description">Description : </label>
+            <textarea name="description" id="add-events__description" cols="30" rows="10" required></textarea>
+
+            <label for="add-events__date">Date : </label>
+            <input type="date" id="add-events__date" class="add-events__date" name="date" required>
+
+            <input type="button" value="Add Date" id="add-events__date_button">
+
+            <input id="add-events__submit" type="submit" value="Submit">
+        </form>
+        <ul id="events-list" class="events-list">
+            <!--Injection JS-->
+        </ul>
+    </main>
+</body>
+</html>

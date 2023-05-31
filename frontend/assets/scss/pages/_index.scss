@@ -1,0 +1,204 @@
+html,body{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #2180d1;
+}
+h1{
+    text-align: center;
+    img{
+        margin: 30px 0;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #open-form{
+        text-align: center;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 900;
+        color: white;
+        background-color: #fd9644; 
+        border: 1px solid #fa8231;
+        margin: 15px 0;
+        border-radius: 25px;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        &:hover{
+            background-color: white;
+            color: #2180d1;
+            border: 1px solid #2180d1;
+            box-shadow: none;
+            transform: translate(1px, 1px);
+        }
+    }
+    #add-events{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.97);
+        min-height: 100%;
+        width: 100%;
+        transition : all 1s;
+        overflow-y: scroll;
+        #close-form{
+            color: whitesmoke;
+            height: 35px;
+            width: 35px;
+            align-self: flex-end;
+            cursor: pointer;
+            margin: 25px 25px 0 0;
+        }
+        p{
+            color: rgb(255, 96, 96);
+            font-size: 12px;
+            margin: 0 auto;
+        }
+        label{
+            color: whitesmoke;
+        }
+        label, input, textarea{
+            margin: 5px auto;
+        }
+        label, input, textarea{
+            width: 300px;
+        }
+        input[type="text"], textarea{
+            color: black;
+        }
+        .add-events__date--container{
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 30px;
+            width: 270px;
+            margin: 5px 0;
+            padding: 0;
+            .add-events__date{
+                height: 25px;
+                width: 125px;
+                border-radius: 5px;
+            }
+            .add-events__remove-date{
+                height: 29px;
+                width: 125px;
+                color: black;
+                border-radius: 5px;
+            }
+        }
+        #add-events__date_button{
+            width: 150px;
+            height: 25px;
+            cursor: pointer;
+        }
+        input[type="submit"]{
+            height: 35px;
+            width: 150px;
+            cursor: pointer;
+            background-color: rgb(83, 233, 121);
+            border: 1px solid rgb(83, 233, 121);
+            font-weight: 700;
+            margin: 25px auto;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.97);
+                border: 1px solid rgb(83, 233, 121);
+                color: rgb(83, 233, 121);
+            }
+        }
+    }
+
+}
+
+.translate-form{
+    // left: -50px !important;
+    transform: translate(100%);
+}
+
+.event-trash{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    &:hover{
+     color: red;
+    }
+}
+
+.alert-field{
+    border: 1px solid red;
+}
+
+#events-list{
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    .event{
+        background-color: whitesmoke;
+        padding: 10px 15px;
+        width: auto;
+        margin: 15px auto;
+        position: relative;
+        overflow: hidden;
+        h2{
+            margin: 0 0 10px 0;
+            width: 90%;
+        }
+        p{
+            width: 100%;
+        }
+        .event-trash{
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 10%;
+        }
+        table{
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            overflow-x: auto !important;
+            text-align: center;
+            border-collapse: collapse;
+            tr{
+                th{
+                    font-size: 14px;;
+                }
+                th,td{
+                    padding: 10px;
+                    border: 1px solid rgba(0,0,0,0.5);
+                }
+                th:first-child{
+                    width: 150px;
+                    position: sticky;
+                    left: 0;
+                    background-color: #e78a0f;
+                    color: whitesmoke;
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    z-index: 10;
+                }
+                td:first-child{
+                    width: 150px;
+                    position: sticky;
+                    left: 0;
+                    background-color: #2180d1;
+                    color: whitesmoke;
+                    font-weight: 900;
+                    font-size: 14px;
+                    z-index: 10;
+                }
+            }
+
+        }
+    }
+}
