@@ -176,6 +176,17 @@ main{
                     padding: 10px;
                     border: 1px solid rgba(0,0,0,0.5);
                 }
+                th:first-child{
+                    width: 150px;
+                    position: sticky;
+                    left: 0;
+                    background-color: #e78a0f;
+                    color: whitesmoke;
+                    font-weight: 900;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    z-index: 10;
+                }
                 td:first-child{
                     width: 150px;
                     position: sticky;
@@ -183,7 +194,7 @@ main{
                     background-color: #2180d1;
                     color: whitesmoke;
                     font-weight: 900;
-                    font-size: 18px;
+                    font-size: 14px;
                     z-index: 10;
                 }
             }
