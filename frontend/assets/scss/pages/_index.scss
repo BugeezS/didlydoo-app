@@ -45,10 +45,10 @@ main{
         display: flex;
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.97);
-        height: 100%;
+        min-height: 100%;
         width: 100%;
-        // padding: 50px;
         transition : all 1s;
+        overflow-y: scroll;
         #close-form{
             color: whitesmoke;
             height: 35px;
@@ -66,6 +66,28 @@ main{
         label, input, textarea{
             width: 300px;
         }
+        .add-events__date--container{
+            align-self: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            height: 30px;
+            width: 270px;
+            margin: 10px 0;
+            padding: 0;
+            .add-events__date{
+                height: 25px;
+                width: 125px;
+                border-radius: 5px;
+            }
+            .add-events__remove-date{
+                height: 29px;
+                width: 125px;
+                color: black;
+                border-radius: 5px;
+            }
+        }
         #add-events__date_button{
             width: 150px;
             height: 25px;
@@ -78,7 +100,7 @@ main{
             background-color: rgb(83, 233, 121);
             border: 1px solid rgb(83, 233, 121);
             font-weight: 700;
-            margin-top: 25px;
+            margin: 25px auto;
             &:hover{
                 background-color: rgba(0, 0, 0, 0.97);
                 border: 1px solid rgb(83, 233, 121);
@@ -93,8 +115,6 @@ main{
     // left: -50px !important;
     transform: translate(100%);
 }
-
-
 
 .event-trash{
     width: 25px;
@@ -128,9 +148,6 @@ main{
             top: 10px;
             right: 0;
             width: 10%;
-        }
-        table,th,td{
-            
         }
         table{
             display: block;

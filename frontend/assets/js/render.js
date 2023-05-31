@@ -36,7 +36,7 @@ export async function renderEvents() {
       table.appendChild(trHeader);
 
       const thAuthor = document.createElement("th");
-      thAuthor.textContent = "Author";
+      thAuthor.textContent = "Participants";
       trHeader.appendChild(thAuthor);
 
       element.dates.forEach((date) => {
