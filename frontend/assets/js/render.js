@@ -18,8 +18,9 @@ export async function renderEvents() {
         }
       });
 
-      ul.innerHTML += `
-      <li class="event">
+      const liEvent = document.createElement('li');
+      liEvent.classList.add('event');
+      liEvent.innerHTML = `
         <h2>${element.author} ${element.name}</h2>
         <p>${element.description}</p>
         <svg id="${element.id}" class="event-trash" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -38,9 +39,9 @@ export async function renderEvents() {
             <input type="submit"/>
           </form>
         </div>
-      </li>`;
+      `;
 
-      const table = document.getElementById(`table-${element.id}`);
+      const table = liEvent.querySelector(`#table-${element.id}`);
 
       const trHeader = document.createElement('tr');
       table.appendChild(trHeader);
@@ -72,13 +73,13 @@ export async function renderEvents() {
         });
       });
 
-      const attendanceForm = document.getElementById(`attendanceForm-${element.id}`);
+      const attendanceForm = liEvent.querySelector(`#attendanceForm-${element.id}`);
       attendanceForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const nameInput = document.getElementById(`nameInput-${element.id}`);
+        const nameInput = liEvent.querySelector(`#nameInput-${element.id}`);
         const dates = element.dates.map((date) => {
-          const availabilityInput = document.getElementById(
-            `availabilityInput-${element.id}-${date.date}`
+          const availabilityInput = liEvent.querySelector(
+            `#availabilityInput-${element.id}-${date.date}`
           );
           return {
             date: date.date,
@@ -89,21 +90,20 @@ export async function renderEvents() {
         console.log('Submitting attendance:', element.id, nameInput.value, dates);
         sendAttendanceInfo(element.id, nameInput.value, dates);
       });
+
+      ul.appendChild(liEvent);
     });
 
-    renderTrashes();
+    const eventTrashContainer = document.querySelector('.events-list');
+    eventTrashContainer.addEventListener('click', (event) => {
+      if (event.target.classList.contains('event-trash')) {
+        const trashIcon = event.target;
+        console.log('Removing event:', event, trashIcon);
+        removeEvents(event, trashIcon);
+      }
+    });
   } catch (error) {
     console.error(error);
-  }
-}
-
-function renderTrashes() {
-  const remove = document.getElementsByClassName('event-trash');
-  for (let trash of remove) {
-    trash.addEventListener('click', (event) => {
-      console.log('Removing event:', event, trash);
-      removeEvents(event, trash);
-    });
   }
 }
 
